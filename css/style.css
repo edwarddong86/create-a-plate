@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'blow';
+  src: url('../font/blow.ttf');
+}
+
+* {
+  font-family: 'blow';
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: #346288;
+  background-color: #d36947;
+  text-align: center;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  margin: 10px;
+}
+
+.blue {  background-color: #346288; }
+
+.green {  background-color: #59a022; }
+
+.font-green { color: #59a022}

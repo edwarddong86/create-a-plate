@@ -1,0 +1,100 @@
+{
+  "user":[
+    {
+      "info":
+      {
+        "email": "",
+        "password": "",
+        "weight": "",
+        "height": "",
+        "bmi": "",
+        "caloriesToLose": ""
+      },
+      "food":
+      {
+
+        "meats": [
+          {
+            "amount": "",
+            "calories": ""
+          }
+        ],
+        "vegetables": [
+          {
+            "amount": "",
+            "calories": ""
+          }
+        ],
+        "fruits": [
+          {
+            "amount": "",
+            "calories": ""
+          }
+        ],
+        "fats": [
+          {
+            "amount": "",
+            "calories": ""
+          }
+        ],
+        "carbs": [
+          {
+            "amount": "",
+            "calories": ""
+          }
+        ]
+      },
+      "calendar": [
+        {
+          "monday": [
+            {
+              "meals": [{}]
+            }
+          ]
+        },
+        {
+          "tuesday": [
+            {
+              "meals": [{}]
+            }
+          ]
+        },
+        {
+          "wednesday": [
+            {
+              "meals": [{}]
+            }
+          ]
+        },
+        {
+          "thursday": [
+            {
+              "meals": [{}]
+            }
+          ]
+        },
+        {
+          "friday": [
+            {
+              "meals": [{}]
+            }
+          ]
+        },
+        {
+          "saturday": [
+            {
+              "meals": [{}]
+            }
+          ]
+        },
+        {
+          "sunday": [
+            {
+              "meals": [{}]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
