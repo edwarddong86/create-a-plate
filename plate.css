@@ -1,0 +1,44 @@
+.food-pic {
+  width: 100px;
+  height: 100px;
+  padding: 0.5em;
+  float: left;
+  margin: 10px 10px 10px 0;
+}
+
+.plate {
+  width: 500px;
+  height: 500px;
+  padding: 0.5em;
+  float: left;
+  margin: 10px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+#feedback { font-size: 1.4em; }
+
+.food-categories .ui-selecting {
+  background: black;
+  color: white;
+}
+
+.food-categories .ui-selected {
+  background: #f39814;
+  color: white;
+}
+
+.food-categories {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 60%;
+}
+
+.food-categories li {
+  margin: 3px;
+  padding: 0.4em;
+  font-size: 1.4em;
+  height: 18px;
+}
+
