@@ -26,62 +26,173 @@
 <body>
 
 <!-- Navigation -->
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Make a Plate</a>
-    </div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li>
-          <a href="#about">About</a>
-        </li>
-        <li>
-          <a href="#services">Services</a>
-        </li>
-        <li>
-          <a href="#contact">Contact</a>
-        </li>
-      </ul>
-    </div>
-    <!-- /.navbar-collapse -->
+<div class="container">
+  <div class="row">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Make a Plate</a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="#about">About</a>
+          </li>
+          <li>
+            <a href="#services">Services</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
+        <button type="button" class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#myModal">
+          Create A Plate
+        </button>
+      </div>
+
+      <!-- /.navbar-collapse -->
+
+      <!-- /.container -->
+    </nav>
   </div>
-  <!-- /.container -->
-</nav>
-<!-- Page Content -->
-<div class="container-fluid">
 
-  <hr class="featurette-divider">
-
-  <!-- First Featurette -->
-  <div class="col-md-3">
-    <ol class="food-categories">
-      <li class="ui-widget-content">Proteins</li>
-      <li class="ui-widget-content">Carbohydrates</li>
-      <li class="ui-widget-content">Fruits</li>
-      <li class="ui-widget-content">Vegetables</li>
-      <li class="ui-widget-content">Fats</li>
-    </ol>
-  </div>
-  <div class="featurette col-md-6" id="about">
-    <div class="plate ui-widget-header">
-      <p>Drop here</p>
+  <!-- modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <div role="tabpanel">
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation"
+                  class="active"><a href="#signup" aria-controls="signup" role="tab" data-toggle="tab">Sign Up</a></li>
+              <li role="presentation"><a href="#bmi-calculator" aria-controls="bmi-calculator" role="tab"
+                                         data-toggle="tab">Calculate BMI</a></li>
+              <li role="presentation"><a href="#goal" aria-controls="goal" role="tab" data-toggle="tab">Set a
+                Goal</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane fade in active" id="signup">
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-default">Next</button>
+              </form>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="bmi-calculator">
+            <div class="modal-body">
+              <form class="form-inline">
+                <div class="form-group">
+                  <label for="height-feet">Height</label>
+                  <input type="number" class="form-control" id="height-feet" placeholder="ft">
+                </div>
+                <div class="form-group">
+                  <label for="height-inches"></label>
+                  <input type="number" class="form-control" id="height-inches" placeholder="in">
+                </div><br/>
+                <div class="form-group">
+                  <label for="weight">Weight</label>
+                  <input type="number" class="form-control" id="weight" placeholder="lbs">
+                </div>
+                <button type="submit" class="btn btn-default pull-right" id="calculate-bmi">Calculate</button>
+              </form><br/>
+              <button type="submit" class="btn btn-default">Next</button>
+              <div class="col-md-offset-1 col-md-10">
+                <img src="images/bmi-thresholds.png"/>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="goal">
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="select-weight">How many pounds would you like to lose?</label>
+                  <select id="select-weight" class="form-control">
+                    <option>5</option>
+                    <option>10</option>
+                    <option>15</option>
+                    <option>20</option>
+                    <option>25</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="select-time">How fast would you like to shed the weight?</label>
+                  <select id="select-time" class="form-control">
+                    <option>1 week</option>
+                    <option>2 weeks</option>
+                    <option>3 weeks</option>
+                    <option>1 month</option>
+                    <option>2 months</option>
+                    <option>3 months</option>
+                  </select>
+                </div>
+              </form>
+              <button type="submit" class="btn btn-default">Start</button>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
     </div>
+  </div>
+  <!-- Page Content -->
 
+  <div class="row">
+    <hr class="featurette-divider">
+
+    <!-- First Featurette -->
+    <div class="col-md-4">
+      <ol class="food-categories">
+        <li class="ui-widget-content">Proteins
+          <div id="proteins"><img src="" class="food-pic"></div>
+        </li>
+        <li class="ui-widget-content carbohydrates">Carbohydrates
+          <div id="carbohydrates"></div>
+        </li>
+        <li class="ui-widget-content fruits">Fruits
+          <div id="fruits"></div>
+        </li>
+        <li class="ui-widget-content vegetables">Vegetables
+          <div id="vegetables"></div>
+        </li>
+        <li class="ui-widget-content fats">Fats
+          <div id="fats"></div>
+        </li>
+      </ol>
+    </div>
+    <div class="featurette col-md-8" id="about">
+      <div class="plate ui-widget-header">
+        <p>Drop here</p>
+      </div>
+    </div>
   </div>
 
   <hr class="featurette-divider">
 
 
   <!-- Footer -->
+
   <footer>
     <div class="row">
       <div class="col-lg-12">
@@ -89,7 +200,6 @@
       </div>
     </div>
   </footer>
-
 </div>
 <!-- /.container -->
 

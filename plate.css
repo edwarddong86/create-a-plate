@@ -24,8 +24,8 @@
 }
 
 .food-categories .ui-selected {
-  background: #f39814;
-  color: white;
+  background: greenyellow;
+  color: green;
 }
 
 .food-categories {
@@ -35,10 +35,10 @@
   width: 60%;
 }
 
-.food-categories li {
-  margin: 3px;
-  padding: 0.4em;
-  font-size: 1.4em;
-  height: 18px;
-}
+/*.food-categories li {*/
+  /*margin: 3px;*/
+  /*padding: 0.4em;*/
+  /*font-size: 1.4em;*/
+  /*height: 18px;*/
+/*}*/
 
