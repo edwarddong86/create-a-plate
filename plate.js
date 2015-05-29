@@ -19,14 +19,14 @@ $(function() {
 
 
 $(function() {
-  var weight = $('#weight').val();
-  var heightFeet = $('#height-feet').val();
-  var heightInches = $('#height-inch').val();
+  var weight = $('input#weight').val();
+  var heightFeet = $('input#height-feet').val();
+  var heightInches = $('input#height-inch').val();
 
   var bmiCalculator = function (weight, heightFeet, heightInches) {
     var bmi = (weight * 703) / (((heightFeet * 12) * (heightInches)) * ((heightFeet * 12) * (heightInches)));
     var bmiMessage = '';
-    var bmiMessagePosition = $('#calculate-bmi');
+    var bmiMessagePosition = $('div#bmi-results');
     return bmi;
     if (bmi < 18.5) {
       bmiMessage = "Your BMI is " + bmi +
@@ -43,7 +43,7 @@ $(function() {
       bmiMessage = "Your BMI is " + bmi +
       "Let's not waste a minute and get you to your ideal weight!";
     }
-    bmiMessagePosition.after(bmiMessage);
+    bmiMessagePosition.prepend(bmiMessage);
   };
   $('#calculate-bmi').on('click', bmiCalculator(weight, heightFeet, heightInches));
 });
