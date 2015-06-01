@@ -112,7 +112,7 @@
                   <label for="weight">Weight</label>
                   <input type="number" class="form-control" id="weight" placeholder="lbs">
                 </div>
-                <button type="submit" class="btn btn-default pull-right" id="calculate-bmi">Calculate</button>
+                <button type="button" class="btn btn-default pull-right" id="calculate-bmi">Calculate</button>
               </form><br/>
               <div id="bmi-results"></div>
               <button type="submit" class="btn btn-default">Next</button>
@@ -163,24 +163,27 @@
     <hr class="featurette-divider">
 
     <!-- First Featurette -->
-    <div class="col-md-4">
-      <ol class="food-categories">
-        <li class="ui-widget-content">Proteins
-          <div id="proteins"><img src="" class="food-pic"></div>
-        </li>
-        <li class="ui-widget-content carbohydrates">Carbohydrates
-          <div id="carbohydrates"></div>
-        </li>
-        <li class="ui-widget-content fruits">Fruits
-          <div id="fruits"></div>
-        </li>
-        <li class="ui-widget-content vegetables">Vegetables
-          <div id="vegetables"></div>
-        </li>
-        <li class="ui-widget-content fats">Fats
-          <div id="fats"></div>
-        </li>
-      </ol>
+    <div class="col-md-4 food-list-accordion">
+      <h3>Proteins</h3>
+      <div>
+        <ul id="proteinList"></ul>
+      </div>
+      <h3>Carbohydrates</h3>
+      <div>
+        <ul id="carbList"></ul>
+      </div>
+      <h3>Vegetables</h3>
+      <div>
+        <ul id="vegeList"></ul>
+      </div>
+      <h3>Fruits</h3>
+      <div>
+        <ul id="fruitList"></ul>
+      </div>
+      <h3>Fats</h3>
+      <div>
+        <ul id="fatList"></ul>
+      </div>
     </div>
     <div class="featurette col-md-8" id="about">
       <div class="plate ui-widget-header">
