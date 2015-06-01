@@ -52,27 +52,60 @@ $(function() {
 $.ajax({
       url: "https://api.mongolab.com/api/1/databases/create-a-plate/collections/test-coll",
       data: {
-        apiKey: "T762mhY9dgHw6pdr4VeEhOdDaZi-zv-S",
-        q: "{type: 'protein'}"
+        apiKey: "T762mhY9dgHw6pdr4VeEhOdDaZi-zv-S"
       },
-      success: function(protein) {
-        $.each(protein, function (i, data ) {
-          var $proteinListItem = $(document.createElement('li'));
-          var $proteinImg = $(document.createElement('img'));
-          $proteinImg.attr('src', 'images/' + data.img);
-          $proteinImg.addClass('food-pic').draggable({
-                  revert: 'invalid',
-                  scroll: false,
-                  containment: '',
-                  helper: 'clone',
-                  start : function() {
-                  this.style.display="none";
-                  },
-                  stop: function() {
-                  this.style.display="";
-                  }});
-          $proteinListItem.append($proteinImg);
-          $('#proteinList').append($proteinListItem);
+      success: function(foods) {
+        $.each(foods, function (i, food) {
+          switch(food.type) {
+            case "protein": addFood(food, $('#proteinList'));
+              break;
+            case "carbohydrates": addFood(food, $('#carbList'));
+              break;
+            case "vegetables": addFood(food, $('#vegeList'));
+              break;
+            case "fruits": addFood(food, $('#fruitList'));
+              break;
+            case "fats": addFood(food, $('#fatsList'));
+              break;
+            default:
+              console.log('unknown food type');
+          }
+
+          function addFood(food, $foodCategory) {
+            var $foodListItem = $('<li>');
+            var $img = $('<img>');
+            $img.attr('src','images/' +food.img);
+            $foodListItem.append($img);
+            $foodCategory.append($foodListItem);
+            $img.addClass('food-pic').draggable({
+              revert: 'invalid',
+              scroll: false,
+              containment: '',
+              helper: 'clone',
+              start: function() {
+                this.style.display = "none";
+              },
+              stop: function(){
+                this.style.display= "";
+              }
+            })
+          }
+          //var $proteinListItem = $(document.createElement('li'));
+          //var $proteinImg = $(document.createElement('img'));
+          //$proteinImg.attr('src', 'images/' + data.img);
+          //$proteinImg.addClass('food-pic').draggable({
+          //        revert: 'invalid',
+          //        scroll: false,
+          //        containment: '',
+          //        helper: 'clone',
+          //        start : function() {
+          //        this.style.display="none";
+          //        },
+          //        stop: function() {
+          //        this.style.display="";
+          //        }});
+          //$proteinListItem.append($proteinImg);
+          //$('#proteinList').append($proteinListItem);
       })
     }
 });
