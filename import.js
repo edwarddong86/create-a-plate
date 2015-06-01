@@ -64,7 +64,7 @@ var food = {
       "calories": 8,
       "amount": 1,
       "type": "vegetables",
-      "img": "cucmber.gif"
+      "img": "cucumber.gif"
     },
     {
       "name": "apple",

@@ -48,7 +48,7 @@ $(function() {
 });
 
 
-//This populates the proteins li from the mongolab database
+//This populates the food list from the mongolab database
 $.ajax({
       url: "https://api.mongolab.com/api/1/databases/create-a-plate/collections/test-coll",
       data: {
@@ -65,7 +65,7 @@ $.ajax({
               break;
             case "fruits": addFood(food, $('#fruitList'));
               break;
-            case "fats": addFood(food, $('#fatsList'));
+            case "fats": addFood(food, $('#fatList'));
               break;
             default:
               console.log('unknown food type');
@@ -80,7 +80,7 @@ $.ajax({
             $img.addClass('food-pic').draggable({
               revert: 'invalid',
               scroll: false,
-              containment: '',
+              containment: 'window',
               helper: 'clone',
               start: function() {
                 this.style.display = "none";
@@ -90,22 +90,6 @@ $.ajax({
               }
             })
           }
-          //var $proteinListItem = $(document.createElement('li'));
-          //var $proteinImg = $(document.createElement('img'));
-          //$proteinImg.attr('src', 'images/' + data.img);
-          //$proteinImg.addClass('food-pic').draggable({
-          //        revert: 'invalid',
-          //        scroll: false,
-          //        containment: '',
-          //        helper: 'clone',
-          //        start : function() {
-          //        this.style.display="none";
-          //        },
-          //        stop: function() {
-          //        this.style.display="";
-          //        }});
-          //$proteinListItem.append($proteinImg);
-          //$('#proteinList').append($proteinListItem);
       })
     }
 });
