@@ -7,8 +7,8 @@ $(function() {
   $('.food-pic').draggable();
   $('.plate').droppable( {
     drop: function( event, ui) {
-
-      $(this).addClass('ui-state-highlight').find('p').html('Droped!');
+      var newTotal = parseInt($('#calorie-total > span').text()) + parseInt(ui.draggable.attr('data-calories'));
+      $('#calorie-total > span').text(newTotal);
     }
   });
 });
@@ -75,6 +75,8 @@ $.ajax({
             var $foodListItem = $('<li>');
             var $img = $('<img>');
             $img.attr('src','images/' +food.img);
+            $img.attr('data-name', food.name);
+            $img.attr('data-calories', food.calories);
             $foodListItem.append($img);
             $foodCategory.append($foodListItem);
             $img.addClass('food-pic').draggable({
