@@ -47,3 +47,8 @@
 #proteinList, #vegeList, #carbList, #fruitList, #fatList {
   list-style-type: none;
 }
+
+.plate-info {
+  display: none;
+  border: 1px solid #000;
+}
