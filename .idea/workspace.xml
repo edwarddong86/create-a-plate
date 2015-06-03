@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bf72da1-975f-41b0-ad18-2e2a29a43aa6" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/adt.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/exercise.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/styleguide.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plate.css" afterPath="$PROJECT_DIR$/plate.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plate.html" afterPath="$PROJECT_DIR$/plate.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plate.js" afterPath="$PROJECT_DIR$/plate.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="create-a-plate.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,8 +31,8 @@
       <file leaf-file-name="plate.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plate.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.88235295" vertical-offset="870" max-vertical-offset="2625">
-              <caret line="61" column="33" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
+            <state vertical-scroll-proportion="-5.0588236" vertical-offset="1887" max-vertical-offset="2655">
+              <caret line="143" column="19" selection-start-line="143" selection-start-column="19" selection-end-line="143" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -45,8 +41,8 @@
       <file leaf-file-name="plate.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/plate.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6722689" vertical-offset="465" max-vertical-offset="2295">
-              <caret line="47" column="74" selection-start-line="47" selection-start-column="74" selection-end-line="47" selection-end-column="74" />
+            <state vertical-scroll-proportion="0.66472304" vertical-offset="0" max-vertical-offset="3960">
+              <caret line="19" column="48" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -65,8 +61,8 @@
       <file leaf-file-name="plate.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plate.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="810">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="291" max-vertical-offset="705">
+              <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -84,8 +80,8 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/exercise.js" />
         <option value="$PROJECT_DIR$/import.js" />
-        <option value="$PROJECT_DIR$/plate.css" />
         <option value="$PROJECT_DIR$/plate.html" />
+        <option value="$PROJECT_DIR$/plate.css" />
         <option value="$PROJECT_DIR$/plate.js" />
       </list>
     </option>
@@ -94,10 +90,9 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1738" />
-    <option name="y" value="119" />
-    <option name="width" value="1280" />
-    <option name="height" value="773" />
+    <option name="x" value="-1920" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -165,7 +160,7 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="FullScreen" value="false" />
+    <property name="FullScreen" value="true" />
     <property name="recentsLimit" value="5" />
   </component>
   <component name="RecentsManager">
@@ -254,15 +249,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1738" y="119" width="1280" height="773" extended-state="6" />
-    <editor active="false" />
+    <frame x="-1920" y="0" width="1920" height="1080" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39500734" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26633662" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22637014" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15007898" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32599118" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -544,22 +539,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plate.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.88235295" vertical-offset="870" max-vertical-offset="2625">
-          <caret line="61" column="33" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plate.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="810">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/import.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="1920">
@@ -568,10 +547,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/plate.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="291" max-vertical-offset="705">
+          <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plate.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.0588236" vertical-offset="1887" max-vertical-offset="2655">
+          <caret line="143" column="19" selection-start-line="143" selection-start-column="19" selection-end-line="143" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/plate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6722689" vertical-offset="465" max-vertical-offset="2295">
-          <caret line="47" column="74" selection-start-line="47" selection-start-column="74" selection-end-line="47" selection-end-column="74" />
+        <state vertical-scroll-proportion="0.66472304" vertical-offset="0" max-vertical-offset="3960">
+          <caret line="19" column="48" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="48" />
           <folding />
         </state>
       </provider>

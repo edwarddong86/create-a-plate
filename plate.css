@@ -32,18 +32,10 @@
   width: 60%;
 }
 
-/*.food-categories li {*/
-  /*margin: 3px;*/
-  /*padding: 0.4em;*/
-  /*font-size: 1.4em;*/
-  /*height: 18px;*/
-/*}*/
-
-#proteinList, #vegeList, #carbList, #fruitList, #fatList {
-  list-style-type: none;
-}
+ul, ol { list-style-type: none; }
 
 .plate-info {
   display: none;
   border: 1px solid #000;
 }
+

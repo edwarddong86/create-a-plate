@@ -1,7 +1,7 @@
 /**
  * Created by edwarddong on 5/26/15.
  */
-
+var foodInfoArray = [];
 $('#myModal').modal('show');
 
 var calculateThreshold = function (bmr, caloriesToLose, timeFrame) {
@@ -9,6 +9,26 @@ var calculateThreshold = function (bmr, caloriesToLose, timeFrame) {
   calsInPlate.toFixed(1);
   console.log(calsInPlate);
   return calsInPlate;
+};
+
+var createFoodInfo = function(food) {
+  var bmr = 2500;
+  var $timeFrame = parseInt($('select#select-time').val());
+  var $lbsToLose = parseInt($('select#select-weight').val());
+  var perPlate = $timeFrame * 7 * 3;
+  var caloriesToLose = $lbsToLose*3500;
+  var storedMaxCalories = calculateThreshold(bmr, caloriesToLose, perPlate);
+  var $foodInfoItem = $('<li>');
+  var $foodInfoSpan = $('<span>').addClass('food-amount-span');
+  var foodName = food.draggable.attr('data-name');
+  var $plateInfoList = $('.plate-info-list');
+  var foodAmount = Math.floor(parseInt(storedMaxCalories) / parseInt(food.draggable.attr('data-calories')));
+  foodInfoArray.push(foodName, foodAmount);
+  console.log(foodInfoArray);
+  $foodInfoItem.append($foodInfoSpan);
+  $plateInfoList.append($foodInfoItem);
+  $foodInfoItem.text(foodName + ' amount: ' + foodAmount + ' oz');
+
 };
 
 $('#start-button').on('click', function(){
@@ -22,7 +42,7 @@ $('#start-button').on('click', function(){
     this.$plateInfo.show();
     this.$thresholdPlaceHolder = $('<h3>');
     this.$thresholdPlaceHolder.text('Maximum Calories: ' + Math.floor(calculateThreshold(bmr, caloriesToLose, perPlate)));
-    this.$plateInfo.append(this.$thresholdPlaceHolder);
+    this.$plateInfo.prepend(this.$thresholdPlaceHolder);
   };
   this.maxPlateCalories();
 });
@@ -33,27 +53,19 @@ $(function() {
     drop: function( event, ui) {
       var newTotal = parseInt($('#calorie-total > span').text()) + parseInt(ui.draggable.attr('data-calories'));
       $('#calorie-total > span').text(newTotal);
-      var createFoodInfo = function() {
-        var bmr = 2500;
-        var $timeFrame = parseInt($('select#select-time').val());
-        var $lbsToLose = parseInt($('select#select-weight').val());
-        var perPlate = $timeFrame * 7 * 3;
-        var caloriesToLose = $lbsToLose*3500;
-        var storedMaxCalories = calculateThreshold(bmr, caloriesToLose, perPlate);
-        var $foodInfoHolder = $('<h4>');
-        var foodName = ui.draggable.attr('data-name');
-        var foodAmount = Math.floor(parseInt(storedMaxCalories) / parseInt(ui.draggable.attr('data-calories')));
-        var $plateInfo = $('.plate-info');
-        $plateInfo.append($foodInfoHolder);
-        $foodInfoHolder.text(foodName + ' amount: ' + foodAmount + ' oz');
 
-      };
-      createFoodInfo();
+      createFoodInfo(ui);
     }
   });
 });
-
-
+//Before this make a function that stores the data attributes
+//Take the current list of items.
+//Take the current max calories.
+//Divide the max calories by the number of items
+//For each Item
+//Divide each items calorie portion by its calories per oz
+//divide the portion of total calories by calories per oz
+//redraw each items amount in oz's
 
 //bmi calculator
 $(function() {
