@@ -4,18 +4,17 @@
 
 //This creates the plate and makes any class with food-pic draggable
 
-var bmr;
-
 $(function() {
   $('.food-pic').draggable();
   $('.plate').droppable( {
     drop: function( event, ui) {
       var newTotal = parseInt($('#calorie-total > span').text()) + parseInt(ui.draggable.attr('data-calories'));
       $('#calorie-total > span').text(newTotal);
+      var $plateInfo = $('#plate-info');
+
     }
   });
 });
-
 
 //bmi calculator
 $(function() {
@@ -53,10 +52,9 @@ $(function() {
 
 var plateThreshold = function (bmr, caloriesToLose, timeFrame) {
   var calsInPlate = (bmr/3) - (caloriesToLose/timeFrame);
-  calsInPlate.toFixed(0);
+  calsInPlate.toFixed(1);
   console.log(calsInPlate);
   return calsInPlate;
-
 };
 
 $('#start-button').on('click', function(){
@@ -98,6 +96,7 @@ $.ajax({
         $img.attr('src','images/' +food.img);
         $img.attr('data-name', food.name);
         $img.attr('data-calories', food.calories);
+        $img.attr('data-amount', food.amount);
         $foodListItem.append($img);
         $foodCategory.append($foodListItem);
         $img.addClass('food-pic').draggable({
