@@ -2,8 +2,7 @@
  * Created by edwarddong on 5/26/15.
  */
 
-//This creates the plate and makes any class with food-pic draggable
-
+$('#myModal').modal('show');
 
 var calculateThreshold = function (bmr, caloriesToLose, timeFrame) {
   var calsInPlate = (bmr/3) - (caloriesToLose/timeFrame);
@@ -45,8 +44,9 @@ $(function() {
         var foodName = ui.draggable.attr('data-name');
         var foodAmount = Math.floor(parseInt(storedMaxCalories) / parseInt(ui.draggable.attr('data-calories')));
         var $plateInfo = $('.plate-info');
-        $foodInfoHolder.text(foodName + ' amount: ' + foodAmount);
         $plateInfo.append($foodInfoHolder);
+        $foodInfoHolder.text(foodName + ' amount: ' + foodAmount + ' oz');
+
       };
       createFoodInfo();
     }

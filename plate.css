@@ -8,14 +8,9 @@
 }
 
 .plate {
-  width: 500px;
-  height: 500px;
-  padding: 0.5em;
-  float: left;
-  margin: 10px;
-  border-radius: 50%;
-  border: 1px solid black;
   z-index: -10;
+  background-color: transparent;
+  border: none;
 }
 
 #feedback { font-size: 1.4em; }
