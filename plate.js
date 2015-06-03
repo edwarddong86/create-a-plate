@@ -44,8 +44,10 @@ $(function() {
         var $foodInfoHolder = $('<h4>');
         var foodName = ui.draggable.attr('data-name');
         var foodAmount = Math.floor(parseInt(storedMaxCalories) / parseInt(ui.draggable.attr('data-calories')));
-
-      }
+        var $plateInfo = $('.plate-info');
+        $foodInfoHolder.text(foodName + ' amount: ' + foodAmount);
+        $plateInfo.append($foodInfoHolder);
+      };
       createFoodInfo();
     }
   });
