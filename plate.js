@@ -3,6 +3,29 @@
  */
 
 //This creates the plate and makes any class with food-pic draggable
+var bmr = 2500;
+var $timeFrame = parseInt($('select#select-time').val());
+var $lbsToLose = parseInt($('select#select-weight').val());
+var perPlate = $timeFrame * 7 * 3;
+var caloriesToLose = $lbsToLose*3500;
+
+var calculateThreshold = function (bmr, caloriesToLose, timeFrame) {
+  var calsInPlate = (bmr/3) - (caloriesToLose/timeFrame);
+  calsInPlate.toFixed(1);
+  console.log(calsInPlate);
+  return calsInPlate;
+};
+
+$('#start-button').on('click', function(){
+  this.addFoodInfo = function() {
+          this.$plateInfo = $('div.plate-info');
+          this.$plateInfo.show();
+          this.$thresholdPlaceHolder = $('<h3>');
+          this.$thresholdPlaceHolder.text('Maximum Calories: ' + calculateThreshold(bmr, caloriesToLose, perPlate));
+          this.$plateInfo.append(this.$thresholdPlaceHolder);
+  };
+       this.addFoodInfo();
+});
 
 $(function() {
   $('.food-pic').draggable();
@@ -10,11 +33,12 @@ $(function() {
     drop: function( event, ui) {
       var newTotal = parseInt($('#calorie-total > span').text()) + parseInt(ui.draggable.attr('data-calories'));
       $('#calorie-total > span').text(newTotal);
-      var $plateInfo = $('#plate-info');
 
     }
   });
 });
+
+
 
 //bmi calculator
 $(function() {
@@ -48,22 +72,6 @@ $(function() {
     var heightInches = parseInt($('input#height-inches').val());
     bmiCalculator(weight, heightFeet, heightInches);
   });
-});
-
-var plateThreshold = function (bmr, caloriesToLose, timeFrame) {
-  var calsInPlate = (bmr/3) - (caloriesToLose/timeFrame);
-  calsInPlate.toFixed(1);
-  console.log(calsInPlate);
-  return calsInPlate;
-};
-
-$('#start-button').on('click', function(){
-  var bmr = 2500;
-  var $timeFrame = parseInt($('select#select-time').val());
-  var perPlate = $timeFrame * 7 * 3;
-  var $lbsToLose = parseInt($('select#select-weight').val());
-  var caloriesToLose = $lbsToLose*3500;
-  plateThreshold(bmr, caloriesToLose, perPlate);
 });
 
 
