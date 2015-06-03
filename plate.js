@@ -3,11 +3,7 @@
  */
 
 //This creates the plate and makes any class with food-pic draggable
-var bmr = 2500;
-var $timeFrame = parseInt($('select#select-time').val());
-var $lbsToLose = parseInt($('select#select-weight').val());
-var perPlate = $timeFrame * 7 * 3;
-var caloriesToLose = $lbsToLose*3500;
+
 
 var calculateThreshold = function (bmr, caloriesToLose, timeFrame) {
   var calsInPlate = (bmr/3) - (caloriesToLose/timeFrame);
@@ -17,14 +13,19 @@ var calculateThreshold = function (bmr, caloriesToLose, timeFrame) {
 };
 
 $('#start-button').on('click', function(){
-  this.addFoodInfo = function() {
-          this.$plateInfo = $('div.plate-info');
-          this.$plateInfo.show();
-          this.$thresholdPlaceHolder = $('<h3>');
-          this.$thresholdPlaceHolder.text('Maximum Calories: ' + calculateThreshold(bmr, caloriesToLose, perPlate));
-          this.$plateInfo.append(this.$thresholdPlaceHolder);
+  this.maxPlateCalories = function() {
+    var bmr = 2500;
+    var $timeFrame = parseInt($('select#select-time').val());
+    var $lbsToLose = parseInt($('select#select-weight').val());
+    var perPlate = $timeFrame * 7 * 3;
+    var caloriesToLose = $lbsToLose*3500;
+    this.$plateInfo = $('div.plate-info');
+    this.$plateInfo.show();
+    this.$thresholdPlaceHolder = $('<h3>');
+    this.$thresholdPlaceHolder.text('Maximum Calories: ' + Math.floor(calculateThreshold(bmr, caloriesToLose, perPlate)));
+    this.$plateInfo.append(this.$thresholdPlaceHolder);
   };
-       this.addFoodInfo();
+  this.maxPlateCalories();
 });
 
 $(function() {
@@ -33,7 +34,19 @@ $(function() {
     drop: function( event, ui) {
       var newTotal = parseInt($('#calorie-total > span').text()) + parseInt(ui.draggable.attr('data-calories'));
       $('#calorie-total > span').text(newTotal);
+      var createFoodInfo = function() {
+        var bmr = 2500;
+        var $timeFrame = parseInt($('select#select-time').val());
+        var $lbsToLose = parseInt($('select#select-weight').val());
+        var perPlate = $timeFrame * 7 * 3;
+        var caloriesToLose = $lbsToLose*3500;
+        var storedMaxCalories = calculateThreshold(bmr, caloriesToLose, perPlate);
+        var $foodInfoHolder = $('<h4>');
+        var foodName = ui.draggable.attr('data-name');
+        var foodAmount = Math.floor(parseInt(storedMaxCalories) / parseInt(ui.draggable.attr('data-calories')));
 
+      }
+      createFoodInfo();
     }
   });
 });
