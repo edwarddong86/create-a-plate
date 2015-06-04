@@ -19,16 +19,24 @@ var createFoodInfo = function(food) {
   var caloriesToLose = $lbsToLose*3500;
   var storedMaxCalories = calculateThreshold(bmr, caloriesToLose, perPlate);
   var $foodInfoItem = $('<li>');
-  var $foodInfoSpan = $('<span>').addClass('food-amount-span');
   var foodName = food.draggable.attr('data-name');
   var $plateInfoList = $('.plate-info-list');
   var foodAmount = Math.floor(parseInt(storedMaxCalories) / parseInt(food.draggable.attr('data-calories')));
   foodInfoArray.push(foodName, foodAmount);
   console.log(foodInfoArray);
-  $foodInfoItem.append($foodInfoSpan);
   $plateInfoList.append($foodInfoItem);
-  $foodInfoItem.text(foodName + ' amount: ' + foodAmount + ' oz');
+  $foodInfoItem.append(foodName + ' amount: ' + '<span class="food-amount">' + foodAmount + '</span>' + ' oz');
+};
 
+var recalculateFoodInfo = function(currentFoods, maxCalories) {
+  var divideCalories = parseInt(maxCalories)/parseInt(currentFoods);
+  for(var i = 0; i < foodInfoArray.length; i++) {
+    $('ul.plate-info-list').children().contains(foodInfoArray[i]).each(function(index){
+      var recalculatedAmount = parseInt(divideCalories)/parseInt(foodInfoArray[i+1]);
+      $(this).find('span').text().remove();
+      $(this).find('span').text(recalculatedAmount);
+    })
+  }
 };
 
 $('#start-button').on('click', function(){
@@ -53,8 +61,15 @@ $(function() {
     drop: function( event, ui) {
       var newTotal = parseInt($('#calorie-total > span').text()) + parseInt(ui.draggable.attr('data-calories'));
       $('#calorie-total > span').text(newTotal);
-
+      var draggedTotal = foodInfoArray.length/2;
+      var bmr = 2500;
+        var $timeFrame = parseInt($('select#select-time').val());
+        var $lbsToLose = parseInt($('select#select-weight').val());
+        var perPlate = $timeFrame * 7 * 3;
+        var caloriesToLose = $lbsToLose*3500;
+        var storedMaxCalories = calculateThreshold(bmr, caloriesToLose, perPlate);
       createFoodInfo(ui);
+     console.log(recalculateFoodInfo(draggedTotal, storedMaxCalories));
     }
   });
 });
