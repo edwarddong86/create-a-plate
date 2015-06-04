@@ -63,13 +63,13 @@ $(function() {
       $('#calorie-total > span').text(newTotal);
       var draggedTotal = foodInfoArray.length/2;
       var bmr = 2500;
-        var $timeFrame = parseInt($('select#select-time').val());
-        var $lbsToLose = parseInt($('select#select-weight').val());
-        var perPlate = $timeFrame * 7 * 3;
-        var caloriesToLose = $lbsToLose*3500;
-        var storedMaxCalories = calculateThreshold(bmr, caloriesToLose, perPlate);
+      var $timeFrame = parseInt($('select#select-time').val());
+      var $lbsToLose = parseInt($('select#select-weight').val());
+      var perPlate = $timeFrame * 7 * 3;
+      var caloriesToLose = $lbsToLose*3500;
+      var storedMaxCalories = calculateThreshold(bmr, caloriesToLose, perPlate);
       createFoodInfo(ui);
-     console.log(recalculateFoodInfo(draggedTotal, storedMaxCalories));
+      console.log(recalculateFoodInfo(draggedTotal, storedMaxCalories));
     }
   });
 });
