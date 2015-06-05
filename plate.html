@@ -65,23 +65,24 @@
           <div role="tabpanel" class="tab-pane fade in active" id="bmi-calculator">
             <div class="modal-body">
               <h2>Let's Check Your BMI</h2>
-              <form class="form-inline">
-                <div class="form-group">
-                  <label for="height-feet">Height</label>
-                  <input type="number" class="form-control" id="height-feet" placeholder="ft">
+              <form class="form col-md-8">
+                <div class="form-group row">
+                  <div class="col-md-4">
+                    <label for="height-feet">Feet</label>
+                    <input type="number" class="form-control" id="height-feet" placeholder="ft">
+                  </div>
+                  <div class="col-md-4">
+                    <label for="height-inches">Inches</label>
+                    <input type="number" class="form-control" id="height-inches" placeholder="in">
+                  </div>
+                  <div class="col-md-4">
+                    <label for="weight">Weight</label>
+                    <input type="number" class="form-control" id="weight" placeholder="lbs">
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label for="height-inches"></label>
-                  <input type="number" class="form-control" id="height-inches" placeholder="in">
-                </div><br/>
-                <div class="form-group">
-                  <label for="weight">Weight</label>
-                  <input type="number" class="form-control" id="weight" placeholder="lbs">
-                </div>
-                <button type="button" class="btn btn-default pull-right" id="calculate-bmi">Calculate</button>
+                <button type="button" class="btn btn-default" id="calculate-bmi">Calculate</button>
               </form><br/>
               <div id="bmi-results"></div>
-              <button type="button" class="btn btn-default" id="next-tab">Next</button>
               <div class="col-md-offset-1 col-md-10">
                 <img class="img-responsive" src="images/bmi-thresholds.png"/>
               </div>
@@ -89,24 +90,26 @@
           </div>
           <div role="tabpanel" class="tab-pane fade" id="goal">
             <div class="modal-body">
+              <h2>How Much Weight Should We Lose?</h2>
               <form>
-                <div class="form-group">
-                  <label for="select-weight">How Many Pounds would you like to lose?</label>
-                  <select id="select-weight" class="form-control">
-                    <option>5</option>
-                    <option>10</option>
-                    <option>15</option>
-                    <option>20</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="select-time">How many weeks would you like to plan for?  Please pick a reasonable
-                    time frame.</label>
-                  <select id="select-time" class="form-control">
-                    <option>4</option>
-                    <option>8</option>
-                    <option>12</option>
-                  </select>
+                <div class="form-group row">
+                  <div class="col-md-4">
+                    <label for="select-weight">Pounds to Lose?</label>
+                    <select id="select-weight" class="form-control">
+                      <option>5</option>
+                      <option>10</option>
+                      <option>15</option>
+                      <option>20</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="select-time">Timeframe</label>
+                    <select id="select-time" class="form-control">
+                      <option>4</option>
+                      <option>8</option>
+                      <option>12</option>
+                    </select>
+                  </div>
                 </div>
               </form>
               <button type="button" class="btn btn-default" id="start-button" data-dismiss="modal">Start</button>
