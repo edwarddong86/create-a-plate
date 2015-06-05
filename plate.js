@@ -48,15 +48,16 @@ var addToPlate = function(food) {
 var portionFoods = function() {
   var $foods = $('.plate-info-list tr');
   var caloriesPerFood = Math.floor(parseInt($('.maxCaloriesPerPlate').text()) / $foods.length);
+  $('.plate > img').not('.plate-image').remove();
   $.each($foods, function(i, food) {
     var portion = (caloriesPerFood / parseInt($(food).attr('data-calories'))).toFixed(0);
     console.log($foods);
     for(var i = 0; i < portion; i++) {
       $('.plate').append(
-          $('<img>').addClass('img-responsive')
+          $('<img>').addClass('img-responsive').attr('src', $(food).attr('data-img')).addClass('col-md-2')
       );
     }
-    console.log($(food).find('.food-amount').text(portion), portion);
+    $(food).find('.food-amount').text(portion), portion;
   });
 };
 
