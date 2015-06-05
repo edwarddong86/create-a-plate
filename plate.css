@@ -1,35 +1,26 @@
+*{
+  font-family: helvetica
+}
+
+body{
+  background-color: #1AB8AF;
+}
+
+.ui-accordion-header {
+  background-color: #FF9200;
+}
+
 .food-pic {
   width: 100px;
   height: 100px;
   padding: 0.5em;
   float: left;
   margin: 10px 10px 10px 0;
-  z-index: 10;
 }
 
 .plate {
-  z-index: -10;
   background-color: transparent;
   border: none;
-}
-
-#feedback { font-size: 1.4em; }
-
-.food-categories .ui-selecting {
-  background: black;
-  color: white;
-}
-
-.food-categories .ui-selected {
-  background: greenyellow;
-  color: green;
-}
-
-.food-categories {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 60%;
 }
 
 ul, ol { list-style-type: none; }
@@ -37,5 +28,14 @@ ul, ol { list-style-type: none; }
 .plate-info {
   display: none;
   border: 1px solid #000;
+  background-color: silver;
+}
+
+.calorie-total {
+  font-weight: bold;
+}
+
+.create-button {
+  background-color: #4B8190;
 }
 

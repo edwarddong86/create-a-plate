@@ -33,18 +33,19 @@ var calculateThreshold = function (bmr, caloriesToLose, numberOfPlates) {
 };
 
 var addToPlate = function(food) {
-  var $food = $('<li>').text(food.draggable.attr('data-name'));
+  var $food = $('<li>').text(food.draggable.attr('data-name') + ': ');
   $food.attr('data-calories', food.draggable.attr('data-calories'));
   var $amount = $('<span>').addClass('food-amount');
+  //var $ounceDisplay = $('<span>').text(' oz.');
   $food.append($amount);
-  $('.plate-info-list').prepend($food);
+  $('.plate-info-list').append($food);
 };
 
 var portionFoods = function() {
   var $foods = $('.plate-info-list > li');
-  var caloriesPerFood = parseInt($('.maxCaloriesPerPlate').text()) / $foods.length;
+  var caloriesPerFood = Math.floor(parseInt($('.maxCaloriesPerPlate').text()) / $foods.length);
   $.each($foods, function(i, food) {
-    var portion = caloriesPerFood / parseInt($(food).attr('data-calories'));
+    var portion = (caloriesPerFood / parseInt($(food).attr('data-calories'))).toFixed(1);
     console.log($(food).find('span').text(portion), portion);
   });
 };
@@ -65,9 +66,11 @@ $('#calculate-bmi').on('click', function(){
 $('#start-button').on('click', function() {
   var numberOfPlates = parseInt($('select#select-time').val() * 7 * 3);
   var caloriesToLose = parseInt($('select#select-weight').val() * 3500);
-  var caloriesPerPlate = calculateThreshold(BMR, caloriesToLose, numberOfPlates);
-  var calories = $('<h3>').text(caloriesPerPlate).addClass('maxCaloriesPerPlate');
-  $('.plate-info').show().append(calories);
+  var caloriesPerPlate = (calculateThreshold(BMR, caloriesToLose, numberOfPlates)).toFixed(0);
+  var calories = $('<span>').text(caloriesPerPlate).addClass('maxCaloriesPerPlate');
+  var caloriesDisplay = $('<h3>').text('Plate Calories: ');
+  caloriesDisplay.append(calories);
+  $('.plate-info').show().prepend(caloriesDisplay);
 });
 
 // Make food list
@@ -102,18 +105,22 @@ $.ajax({
         $img.attr('data-amount', food.amount);
         $foodListItem.append($img);
         $foodCategory.append($foodListItem);
-        $img.addClass('food-pic').draggable({
-          revert: 'invalid',
-          scroll: false,
-          containment: 'window',
-          helper: 'clone',
-          start: function() {
-            this.style.display = "none";
-          },
-          stop: function(){
-            this.style.display= "";
-          }
-        })
+        $img.addClass('food-pic').draggable(
+            {
+              revert: 'invalid',
+              scroll: false,
+              containment: 'window',
+              helper: 'clone',
+              cursor: 'move',
+              stack: '.food-pic',
+              start: function() {
+                this.style.display = "";
+              },
+              stop: function(){
+                this.style.display= "block";
+              }
+            }
+        )
       }
     })
   }
@@ -127,10 +134,12 @@ $('.food-list-accordion').accordion({
 });
 
 // Allow User to Add Food to Plate
-$('.food-pic').draggable();
+//$('.food-pic').draggable();
 $('.plate').droppable( {
   drop: function( event, food) {
     addToPlate(food);
     portionFoods();
   }
 });
+
+$('.food-list-accordion > div').css()
