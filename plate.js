@@ -37,19 +37,25 @@ var addToPlate = function(food) {
   var $row = $('<tr>');
   $row.append($food);
   $row.attr('data-calories', food.draggable.attr('data-calories'));
+  $row.attr('data-img', food.draggable.attr('src'));
   var $amountHolder = $('<td>');
   var $amount = $('<span>').addClass('food-amount');
   $amountHolder.append($amount);
   $row.append($amountHolder);
   $('.plate-info-list').append($row);
-
 };
 
 var portionFoods = function() {
   var $foods = $('.plate-info-list tr');
   var caloriesPerFood = Math.floor(parseInt($('.maxCaloriesPerPlate').text()) / $foods.length);
   $.each($foods, function(i, food) {
-    var portion = (caloriesPerFood / parseInt($(food).attr('data-calories'))).toFixed(1);
+    var portion = (caloriesPerFood / parseInt($(food).attr('data-calories'))).toFixed(0);
+    console.log($foods);
+    for(var i = 0; i < portion; i++) {
+      $('.plate').append(
+          $('<img>').addClass('img-responsive')
+      );
+    }
     console.log($(food).find('.food-amount').text(portion), portion);
   });
 };
@@ -77,9 +83,26 @@ $('#start-button').on('click', function() {
   var caloriesToLose = parseInt($('select#select-weight').val() * 3500);
   var caloriesPerPlate = (calculateThreshold(BMR, caloriesToLose, numberOfPlates)).toFixed(0);
   var calories = $('<span>').text(caloriesPerPlate).addClass('maxCaloriesPerPlate');
-  var caloriesDisplay = $('<h3>').text('Plate Calories: ').css({'font-weight': 'bold'});
+  var caloriesDisplay = $('<h3>').text('Total Calories: ').css({'font-weight': 'bold'});
   caloriesDisplay.append(calories);
   $('.plate-info').show().prepend(caloriesDisplay);
+});
+
+// Show Accordion
+$('.food-list-accordion').accordion({
+  collapsible: true,
+  heightStyle: "content",
+  active: 'none'
+});
+
+// Allow User to Add Food to Plate
+
+$('.plate').droppable( {
+  drop: function( event, food) {
+    toggleFoodItemList();
+    addToPlate(food);
+    portionFoods();
+  }
 });
 
 // Make food list
@@ -135,23 +158,3 @@ $.ajax({
   }
 });
 
-// Show Accordion
-$('.food-list-accordion').accordion({
-  collapsible: true,
-  heightStyle: "content",
-  active: 'none'
-});
-
-// Allow User to Add Food to Plate
-
-$('.plate').droppable( {
-  drop: function( event, food) {
-    toggleFoodItemList();
-    addToPlate(food);
-    portionFoods();
-  }
-});
-
-$('#next-tab').on('click', function() {
-    $('.nav-tabs li').filter('.active').next('li').find('a[data-toggle="tab"]').tab('show');
-});
