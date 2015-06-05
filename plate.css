@@ -48,6 +48,7 @@ ul, ol { list-style-type: none; }
   background-image: -webkit-linear-gradient(top, #12a548, #12a548);
   background-image: -o-linear-gradient(top, #12a548, #12a548);
   background-image: linear-gradient(#12a548, #12a548);
+  border-radius: 0;
   border-color: #12a548 #12a548 hsl(142, 80%, 36%);
   color: #fff !important;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.00);
