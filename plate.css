@@ -1,6 +1,6 @@
 *{ font-family: helvetica }
 
-body{ background-color: #2b9509; }
+body{ background-color: #d46d6a; }
 
 ul, ol { list-style-type: none; }
 
@@ -10,7 +10,7 @@ ul, ol { list-style-type: none; }
   padding: 0;
 }
 
-.logo { margin: -10px;  }
+.logo { margin: -7px;  }
 
 .food-pic {
   width: 100px;
@@ -44,3 +44,6 @@ ul, ol { list-style-type: none; }
   color: #080808;
 }
 
+div.ui-widget-header {
+  background-color: #d46d6a;
+}
