@@ -66,6 +66,7 @@ ul, ol { list-style-type: none; }
   background-image: -webkit-linear-gradient(top, #f4f47f, #f4f47f);
   background-image: -o-linear-gradient(top, #f4f47f, #f4f47f);
   background-image: linear-gradient(#f4f47f, #f4f47f);
+  border-radius: 0;
   border-color: #f4f47f #f4f47f hsl(60, 85%, 73%);
   color: #333 !important;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.00);
