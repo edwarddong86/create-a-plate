@@ -3,6 +3,21 @@
  */
 var BMR = 2500;
 
+//Adds plate info in a table list to the right of the page
+var addToPlate = function(food) {
+  var $food = $('<td>').text(food.draggable.attr('data-name')).css({'font-weight': 'bold'});
+  var $row = $('<tr>');
+  $row.append($food);
+  $row.attr('data-calories', food.draggable.attr('data-calories'));
+  $row.attr('data-img', food.draggable.attr('src'));
+  var $amountHolder = $('<td>');
+  var $amount = $('<span>').addClass('food-amount');
+  $amountHolder.append($amount);
+  $amountHolder.append('<span>&nbspoz.</span>');
+  $row.append($amountHolder);
+  $('.plate-info-list').append($row);
+};
+
 //Calculates BMI and makes a message
 var bmiCalculator = function (weight, heightFeet, heightInches) {
   var bmiWeight = weight * 703;
@@ -34,21 +49,6 @@ var calculateThreshold = function (bmr, caloriesToLose, numberOfPlates) {
   return calsInPlate;
 };
 
-//Adds plate info in a table list to the right of the page
-var addToPlate = function(food) {
-  var $food = $('<td>').text(food.draggable.attr('data-name')).css({'font-weight': 'bold'});
-  var $row = $('<tr>');
-  $row.append($food);
-  $row.attr('data-calories', food.draggable.attr('data-calories'));
-  $row.attr('data-img', food.draggable.attr('src'));
-  var $amountHolder = $('<td>');
-  var $amount = $('<span>').addClass('food-amount');
-  $amountHolder.append($amount);
-  $amountHolder.append('<span>&nbspoz.</span>');
-  $row.append($amountHolder);
-  $('.plate-info-list').append($row);
-};
-
 //Calculates portion of foods and makes images of portions appear
 var portionFoods = function() {
   var $foods = $('.plate-info-list tr');
@@ -71,9 +71,6 @@ var toggleFoodItemList = function() {
   $('.plate-info').slideUp().slideDown().show();
 };
 
-// Display the modal
-$('#myModal').modal('show');
-
 // Display the BMI Calculation
 $('#calculate-bmi').on('click', function(){
   var weight = parseInt($('input#weight').val());
@@ -81,17 +78,6 @@ $('#calculate-bmi').on('click', function(){
   var heightInches = parseInt($('input#height-inches').val());
   var bmiInfo = bmiCalculator(weight, heightFeet, heightInches);
   $('#bmi-results').text(bmiInfo).css({'font-weight': 'bold'});
-});
-
-// Determine the users weight loss goal
-$('#start-button').on('click', function() {
-  var numberOfPlates = parseInt($('select#select-time').val() * 7 * 3);
-  var caloriesToLose = parseInt($('select#select-weight').val() * 3500);
-  var caloriesPerPlate = (calculateThreshold(BMR, caloriesToLose, numberOfPlates)).toFixed(0);
-  var calories = $('<span>').text(caloriesPerPlate).addClass('maxCaloriesPerPlate');
-  var caloriesDisplay = $('<h3>').text('Total Calories: ').css({'font-weight': 'bold'});
-  caloriesDisplay.append(calories);
-  $('.plate-info').show().prepend(caloriesDisplay);
 });
 
 // Show Accordion
@@ -102,13 +88,26 @@ $('.food-list-accordion').accordion({
 });
 
 // Allow User to Add Food to Plate
-
 $('.plate').droppable( {
   drop: function( event, food) {
     toggleFoodItemList();
     addToPlate(food);
     portionFoods();
   }
+});
+
+// Display the modal
+$('#myModal').modal('show');
+
+// Determine the users weight loss goal
+$('#start-button').on('click', function() {
+  var numberOfPlates = parseInt($('select#select-time').val() * 7 * 3);
+  var caloriesToLose = parseInt($('select#select-weight').val() * 3500);
+  var caloriesPerPlate = (calculateThreshold(BMR, caloriesToLose, numberOfPlates)).toFixed(0);
+  var calories = $('<span>').text(caloriesPerPlate).addClass('maxCaloriesPerPlate');
+  var caloriesDisplay = $('<h3>').text('Total Calories: ').css({'font-weight': 'bold'});
+  caloriesDisplay.append(calories);
+  $('.plate-info').show().prepend(caloriesDisplay);
 });
 
 // Make food list
