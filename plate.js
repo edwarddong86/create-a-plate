@@ -3,6 +3,7 @@
  */
 var BMR = 2500;
 
+//Calculates BMI and makes a message
 var bmiCalculator = function (weight, heightFeet, heightInches) {
   var bmiWeight = weight * 703;
   var bmiHeight = heightFeet * 12 + heightInches;
@@ -26,12 +27,14 @@ var bmiCalculator = function (weight, heightFeet, heightInches) {
   return bmiMessage
 };
 
+//Calculates how much calories are allowed on the plate
 var calculateThreshold = function (bmr, caloriesToLose, numberOfPlates) {
   var calsInPlate = (bmr / 3) - (caloriesToLose / numberOfPlates);
   calsInPlate.toFixed(1);
   return calsInPlate;
 };
 
+//Adds plate info in a table list to the right of the page
 var addToPlate = function(food) {
   var $food = $('<td>').text(food.draggable.attr('data-name')).css({'font-weight': 'bold'});
   var $row = $('<tr>');
@@ -40,12 +43,13 @@ var addToPlate = function(food) {
   $row.attr('data-img', food.draggable.attr('src'));
   var $amountHolder = $('<td>');
   var $amount = $('<span>').addClass('food-amount');
-  $amountHolder.append($amount)
+  $amountHolder.append($amount);
   $amountHolder.append('<span>&nbspoz.</span>');
   $row.append($amountHolder);
   $('.plate-info-list').append($row);
 };
 
+//Calculates portion of foods and makes images of portions appear
 var portionFoods = function() {
   var $foods = $('.plate-info-list tr');
   var caloriesPerFood = Math.floor(parseInt($('.maxCaloriesPerPlate').text()) / $foods.length);

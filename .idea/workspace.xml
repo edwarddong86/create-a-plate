@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bf72da1-975f-41b0-ad18-2e2a29a43aa6" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plate.html" afterPath="$PROJECT_DIR$/plate.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plate.js" afterPath="$PROJECT_DIR$/plate.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -27,21 +28,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="plate.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="plate.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/plate.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.1764708" vertical-offset="2337" max-vertical-offset="2685">
-              <caret line="170" column="32" selection-start-line="170" selection-start-column="32" selection-end-line="170" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.6396396" vertical-offset="2352" max-vertical-offset="2700">
+              <caret line="171" column="32" selection-start-line="171" selection-start-column="32" selection-end-line="171" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="plate.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="plate.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plate.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7478992" vertical-offset="378" max-vertical-offset="2520">
-              <caret line="43" column="21" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
+            <state vertical-scroll-proportion="-2.7777777" vertical-offset="0" max-vertical-offset="2580">
+              <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -90,8 +91,8 @@
         <option value="$PROJECT_DIR$/js/exercise.js" />
         <option value="$PROJECT_DIR$/import.js" />
         <option value="$PROJECT_DIR$/plate.css" />
-        <option value="$PROJECT_DIR$/plate.html" />
         <option value="$PROJECT_DIR$/plate.js" />
+        <option value="$PROJECT_DIR$/plate.html" />
       </list>
     </option>
   </component>
@@ -99,8 +100,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1789" />
-    <option name="y" value="202" />
+    <option name="x" value="-1612" />
+    <option name="y" value="191" />
     <option name="width" value="1349" />
     <option name="height" value="773" />
   </component>
@@ -273,7 +274,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1789" y="202" width="1349" height="773" extended-state="6" />
+    <frame x="-1612" y="191" width="1349" height="773" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -644,18 +645,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plate.html">
+    <entry file="file://$PROJECT_DIR$/plate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.1764708" vertical-offset="2337" max-vertical-offset="2685">
-          <caret line="170" column="32" selection-start-line="170" selection-start-column="32" selection-end-line="170" selection-end-column="32" />
+        <state vertical-scroll-proportion="-2.7777777" vertical-offset="0" max-vertical-offset="2580">
+          <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plate.js">
+    <entry file="file://$PROJECT_DIR$/plate.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7478992" vertical-offset="378" max-vertical-offset="2520">
-          <caret line="43" column="21" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.6396396" vertical-offset="2352" max-vertical-offset="2700">
+          <caret line="171" column="32" selection-start-line="171" selection-start-column="32" selection-end-line="171" selection-end-column="32" />
           <folding />
         </state>
       </provider>
