@@ -1,14 +1,16 @@
-*{
-  font-family: helvetica
-}
+*{ font-family: helvetica }
 
-body{
-  background-color: #1AB8AF;
-}
+body{ background-color: #2b9509; }
+
+ul, ol { list-style-type: none; }
 
 .ui-accordion-header {
-  background-color: #FF9200;
+  background-color: #ff9200;
+  margin: 0;
+  padding: 0;
 }
+
+.logo { margin: -10px;  }
 
 .food-pic {
   width: 100px;
@@ -23,19 +25,22 @@ body{
   border: none;
 }
 
-ul, ol { list-style-type: none; }
-
 .plate-info {
   display: none;
   border: 1px solid #000;
-  background-color: silver;
+  background-color: #fff;
 }
 
 .calorie-total {
   font-weight: bold;
 }
 
-.create-button {
-  background-color: #4B8190;
+.btn:hover {
+  background-color: #3db318;
+}
+
+.btn {
+  background-color: #f50000;
+  color: #080808;
 }
 

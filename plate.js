@@ -33,20 +33,24 @@ var calculateThreshold = function (bmr, caloriesToLose, numberOfPlates) {
 };
 
 var addToPlate = function(food) {
-  var $food = $('<li>').text(food.draggable.attr('data-name') + ': ');
-  $food.attr('data-calories', food.draggable.attr('data-calories'));
+  var $food = $('<td>').text(food.draggable.attr('data-name'));
+  var $row = $('<tr>');
+  $row.append($food);
+  $row.attr('data-calories', food.draggable.attr('data-calories'));
+  var $amountHolder = $('<td>');
   var $amount = $('<span>').addClass('food-amount');
-  //var $ounceDisplay = $('<span>').text(' oz.');
-  $food.append($amount);
-  $('.plate-info-list').append($food);
+  $amountHolder.append($amount);
+  $row.append($amountHolder);
+  $('.plate-info-list').append($row);
+
 };
 
 var portionFoods = function() {
-  var $foods = $('.plate-info-list > li');
+  var $foods = $('.plate-info-list tr');
   var caloriesPerFood = Math.floor(parseInt($('.maxCaloriesPerPlate').text()) / $foods.length);
   $.each($foods, function(i, food) {
     var portion = (caloriesPerFood / parseInt($(food).attr('data-calories'))).toFixed(1);
-    console.log($(food).find('span').text(portion), portion);
+    console.log($(food).find('.food-amount').text(portion), portion);
   });
 };
 
@@ -59,7 +63,7 @@ $('#calculate-bmi').on('click', function(){
   var heightFeet = parseInt($('input#height-feet').val());
   var heightInches = parseInt($('input#height-inches').val());
   var bmiInfo = bmiCalculator(weight, heightFeet, heightInches);
-  $('#bmi-results').text(bmiInfo);
+  $('#bmi-results').text(bmiInfo).css({'font-weight': 'bold'});
 });
 
 // Determine the users weight loss goal
@@ -68,7 +72,7 @@ $('#start-button').on('click', function() {
   var caloriesToLose = parseInt($('select#select-weight').val() * 3500);
   var caloriesPerPlate = (calculateThreshold(BMR, caloriesToLose, numberOfPlates)).toFixed(0);
   var calories = $('<span>').text(caloriesPerPlate).addClass('maxCaloriesPerPlate');
-  var caloriesDisplay = $('<h3>').text('Plate Calories: ');
+  var caloriesDisplay = $('<h3>').text('Plate Calories: ').css({'font-weight': 'bold'});
   caloriesDisplay.append(calories);
   $('.plate-info').show().prepend(caloriesDisplay);
 });
@@ -134,12 +138,15 @@ $('.food-list-accordion').accordion({
 });
 
 // Allow User to Add Food to Plate
-//$('.food-pic').draggable();
+
 $('.plate').droppable( {
   drop: function( event, food) {
     addToPlate(food);
     portionFoods();
+    $('.plate-info').slideUp().slideDown().show();
   }
 });
 
-$('.food-list-accordion > div').css()
+$('#next-tab').on('click', function() {
+    $('.nav-tabs li').filter('.active').next('li').find('a[data-toggle="tab"]').tab('show');
+});

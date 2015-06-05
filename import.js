@@ -4,109 +4,109 @@
 var food = {
   "food": [
     {
-      "name": "beef sirloin",
+      "name": "Beef Sirloin",
       "calories": 69,
       "amount": 1,
       "type": "protein",
       "img": "steak.gif"
     },
     {
-      "name": "chicken breast",
+      "name": "Chicken Breast",
       "calories": 49,
       "amount": 1,
       "type": "protein",
-      "img": "chicken.jpeg"
+      "img": "chicken.png"
     },
     {
-      "name": "pork loin",
+      "name": "Pork Loin",
       "calories": 69,
       "amount": 1,
       "type": "protein",
       "img": "chopCartoon.png"
     },
     {
-      "name": "salmon",
+      "name": "Salmon",
       "calories": 59,
       "amount": 1,
       "type": "protein",
-      "img": "salmon.jpeg"
+      "img": "salmon.png"
     },
     {
-      "name": "brown rice",
+      "name": "Brown Rice",
       "calories": 31.4,
       "amount": 1,
       "type": "carbohydrates",
-      "img": "brown-rice.jpg"
+      "img": "brown-rice.png"
     },
     {
-      "name": " wheat bread",
+      "name": "Wheat Bread",
       "calories": 73,
       "amount": 1,
       "type": "carbohydrates",
-      "img": "wheat-bread.jpg"
+      "img": "wheat-bread.png"
     },
     {
-      "name": "pasta",
+      "name": "Pasta",
       "calories": 105.3,
       "amount": 1,
       "type": "carbohydrates",
-      "img": "pasta.jpg"
+      "img": "pasta.png"
     },
     {
-      "name": "tomatoes",
+      "name": "Tomatoes",
       "calories": 22,
       "amount": 1,
       "type": "vegetables",
       "img": "tomato.gif"
     },
     {
-      "name": "cucumber",
+      "name": "Cucumber",
       "calories": 8,
       "amount": 1,
       "type": "vegetables",
       "img": "cucumber.gif"
     },
     {
-      "name": "apple",
+      "name": "Apple",
       "calories": 95,
       "amount": 1,
       "type": "fruits",
-      "img": "apple.jpg"
+      "img": "apple.png"
     },
     {
-      "name": "orange",
+      "name": "Orange",
       "calories": 45,
       "amount": 1,
       "type": "fruits",
       "img": "orange.png"
     },
     {
-      "name": "banana",
+      "name": "Banana",
       "calories": 105,
       "amount": 1,
       "type": "fruits",
       "img": "banana.png"
     },
     {
-      "name": "almonds",
+      "name": "Almonds",
       "calories": 163,
       "amount": 1,
       "type": "fats",
       "img": "almond.jpg"
     },
     {
-      "name": "olive oil",
+      "name": "Olive Oil",
       "calories": 251.2,
       "amount": 1,
       "type": "fats",
-      "img": "olive-oil.jpg"
+      "img": "olive-oil.png"
     },
     {
-      "name": "coconut oil",
+      "name": "Coconut Oil",
       "calories": 251.2,
       "amount": 1,
       "type": "fats",
-      "img": "coconut-oil.jpg"
+      "img": "coconut-oil.png"
     }
   ]
 };
