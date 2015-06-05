@@ -129,4 +129,6 @@ ul, ol { list-style-type: none; }
 
 .logo { margin: -7px;  }
 
+.modal-header { border-bottom: none; }
 
+.modal-footer { border-top: none; }
