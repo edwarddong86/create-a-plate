@@ -40,7 +40,8 @@ var addToPlate = function(food) {
   $row.attr('data-img', food.draggable.attr('src'));
   var $amountHolder = $('<td>');
   var $amount = $('<span>').addClass('food-amount');
-  $amountHolder.append($amount);
+  $amountHolder.append($amount)
+  $amountHolder.append('<span>&nbspoz.</span>');
   $row.append($amountHolder);
   $('.plate-info-list').append($row);
 };
