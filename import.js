@@ -92,7 +92,7 @@ var food = {
       "calories": 163,
       "amount": 1,
       "type": "fats",
-      "img": "almond.jpg"
+      "img": "almond.png"
     },
     {
       "name": "Olive Oil",
