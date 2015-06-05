@@ -33,7 +33,7 @@ var calculateThreshold = function (bmr, caloriesToLose, numberOfPlates) {
 };
 
 var addToPlate = function(food) {
-  var $food = $('<td>').text(food.draggable.attr('data-name'));
+  var $food = $('<td>').text(food.draggable.attr('data-name')).css({'font-weight': 'bold'});
   var $row = $('<tr>');
   $row.append($food);
   $row.attr('data-calories', food.draggable.attr('data-calories'));
@@ -52,6 +52,11 @@ var portionFoods = function() {
     var portion = (caloriesPerFood / parseInt($(food).attr('data-calories'))).toFixed(1);
     console.log($(food).find('.food-amount').text(portion), portion);
   });
+};
+
+//make the food list item toggle
+var toggleFoodItemList = function() {
+  $('.plate-info').slideUp().slideDown().show();
 };
 
 // Display the modal
@@ -141,9 +146,9 @@ $('.food-list-accordion').accordion({
 
 $('.plate').droppable( {
   drop: function( event, food) {
+    toggleFoodItemList();
     addToPlate(food);
     portionFoods();
-    $('.plate-info').slideUp().slideDown().show();
   }
 });
 
