@@ -1,28 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
-
   <title>Create a Plate</title>
-
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/one-page-wonder.css" rel="stylesheet">
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  <link href="plate.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
   <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
 </head>
-
 <body>
-<!-- Navigation -->
 <div class="container">
   <div class="row">
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -38,14 +31,13 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
         </ul>
-        <button type="button" class="create-button btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#myModal">
+        <button type="button" class="btn btn-primary btn-lg pull-right create-button " data-toggle="modal" data-target="#myModal">
           Create A Plate
         </button>
       </div>
     </nav>
   </div>
-  <!-- modal -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="fade modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -62,7 +54,7 @@
           </div>
         </div>
         <div class="tab-content">
-          <div role="tabpanel" class="tab-pane fade in active" id="bmi-calculator">
+          <div role="tabpanel" class="active fade in tab-pane" id="bmi-calculator">
             <div class="modal-body">
               <h2>Let's Check Your BMI</h2>
               <form class="form col-md-8">
@@ -89,7 +81,7 @@
               </div>
             </div>
           </div>
-          <div role="tabpanel" class="tab-pane fade" id="goal">
+          <div role="tabpanel" class="fade tab-pane" id="goal">
             <div class="modal-body">
               <form>
                 <div class="form-group row">
@@ -121,14 +113,13 @@
       </div>
     </div>
   </div>
-  <!-- Page Content -->
   <div class="row">
     <div class="col-md-12">
       <h2><strong>Choose Your Foods</strong></h2>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-3 col-sm-3 food-list-accordion">
+    <div class="col-sm-3 col-md-3 food-list-accordion">
       <h3>Proteins</h3>
       <div>
         <ul id="proteinList"></ul>
@@ -150,17 +141,16 @@
         <ul id="fatList"></ul>
       </div>
     </div>
-    <div class="featurette col-md-6 col-sm-6" id="about">
+    <div class="col-sm-6 col-md-6 featurette" id="about">
       <div class="plate ui-widget-header">
         <img src="images/plate.png" class="img-responsive plate-image"/>
       </div>
     </div>
-    <div class="col-md-3 col-sm-3 plate-info">
+    <div class="col-sm-3 col-md-3 plate-info">
       <table class="table plate-info-list"></table>
     </div>
   </div>
   <hr class="featurette-divider">
-  <!-- Footer -->
   <footer>
     <div class="row">
       <div class="col-lg-12">
@@ -169,6 +159,6 @@
     </div>
   </footer>
 </div>
-<script src="plate.js"></script>
+<script src="js/default.js"></script>
 </body>
 </html>
