@@ -5,8 +5,10 @@
 
 
 
+
 ![alt tag](https://raw.github.com/edwarddong86/create-a-plate/master/images/Screen\ Shot\ 2015-06-08\ at\ 1.01.09\ PM.png)
 2.  Users can select their weight loss goal and the rate at which they wish to lose it
+
 
 
 
@@ -15,8 +17,10 @@
 
 
 
+
 ![alt tag](https://raw.github.com/edwarddong86/create-a-plate/master/images/Screen\ Shot\ 2015-06-08\ at\ 1.03.39\ PM.png)
 4.  Users can select from food groups and select pictures of food they want.
+
 
 
 
