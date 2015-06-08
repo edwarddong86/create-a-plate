@@ -1,5 +1,5 @@
 # create-a-plate
-A FOOD PLANNING APP FOR KIDS TO GIVE AN AMOUNT OF FOOD BASED ON INDIVIDUAL GOALS
+###A FOOD PLANNING APP FOR KIDS TO GIVE AN AMOUNT OF FOOD BASED ON INDIVIDUAL GOALS
 ![alt tag](https://raw.github.com/edwarddong86/create-a-plate/master/images/Screen\ Shot\ 2015-06-08\ at\ 11.49.42\ AM.png)
 1.  Users can input their body mass and BMI will be calculated for you
 ![alt tag](https://raw.github.com/edwarddong86/create-a-plate/master/images/Screen\ Shot\ 2015-06-08\ at\ 1.01.09\ PM.png)
