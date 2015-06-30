@@ -2,7 +2,6 @@
  * Created by edwarddong on 5/26/15.
  */
 var BMR = 2500;
-
 //Adds plate info in a table list to the right of the page
 var addToPlate = function(food) {
   var $food = $('<td>').text(food.draggable.attr('data-name')).css({'font-weight': 'bold'});
@@ -114,7 +113,7 @@ $('#start-button').on('click', function() {
 $.ajax({
   url: "https://api.mongolab.com/api/1/databases/create-a-plate/collections/test-coll",
   data: {
-    apiKey: "T762mhY9dgHw6pdr4VeEhOdDaZi-zv-S"
+    apiKey: /*type api key */
   },
   success: function(foods) {
     $.each(foods, function (i, food) {

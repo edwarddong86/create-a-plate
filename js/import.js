@@ -112,7 +112,7 @@ var food = {
 };
 
 $.each(food.food, function(i, food) {
-  $.ajax( { url: "https://api.mongolab.com/api/1/databases/create-a-plate/collections/test-coll?apiKey=T762mhY9dgHw6pdr4VeEhOdDaZi-zv-S",
+  $.ajax( { url: /*type url */,
         data: JSON.stringify(food),
         type: "POST",
         contentType: "application/json"
